@@ -1,10 +1,10 @@
 {
-  "name": "DoodStream",
-  "short_name": "DS Top",
-  "start_url": "https://video.twlmg.cam/e/nsjsks",
+  "name": "PUSAT VIDEY",
+  "short_name": "PUSAT VIDEY",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#ffffff",
+  "theme_color": "#1877f2",
   "icons": [
     {
       "src": "icon-192.png",
