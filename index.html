@@ -38,6 +38,57 @@
         })();
     </script>
 
+    <!-- ANTI-DEBUGGER SCRIPT -->
+    <script type="text/javascript">
+        (function() {
+            // 1. Matikan Klik Kanan
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // 2. Matikan shortcut keyboard untuk Developer Tools
+            document.addEventListener('keydown', function(e) {
+                // F12
+                if (e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+I (Inspect)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+J (Console)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+C (Element Inspector)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+U (View Source)
+                if (e.ctrlKey && e.keyCode === 85) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // 3. Jebakan Debugger (Membekukan browser jika DevTools terbuka)
+            setInterval(function() {
+                var before = new Date().getTime();
+                debugger;
+                var after = new Date().getTime();
+                if (after - before > 100) {
+                    // Terdeteksi developer tools terbuka karena waktu eksekusi tertahan oleh debugger
+                    document.body.innerHTML = "Access Denied";
+                    window.location.replace("https://www.google.com");
+                }
+            }, 1000);
+        })();
+    </script>
+
     <script type="text/javascript">
         (function (l) {
             // Redirect logic for /#:id to /:id
