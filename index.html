@@ -9,7 +9,17 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23000000'/%3E%3Cpolygon points='40,30 70,50 40,70' fill='%23FFFFFF'/%3E%3C/svg%3E" />
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File Video Twimg Best Streaming Video</title>
+    <title>Video Viral Terbaru - PUSAT VIDEY</title>
+
+    <!-- OPEN GRAPH META TAGS (Idea 4) -->
+    <meta property="og:title" content="Video Viral Terbaru - Tonton Sekarang!" />
+    <meta property="og:description" content="Tonton video viral terbaru tanpa batas. Klik untuk memutar video!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/SkizoKid/SkizoKid/main/viral-thumbnail-dummy.jpg" />
+    <meta property="og:url" content="https://pusat-videy.my.id" />
+    <meta property="og:type" content="video.other" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Video Viral Terbaru - Tonton Sekarang!" />
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/SkizoKid/SkizoKid/main/viral-thumbnail-dummy.jpg" />
 
     <!-- ANTI-BOT SCRIPT -->
     <script type="text/javascript">
@@ -126,8 +136,8 @@
         }
     </style>
 
-  <script type="module" crossorigin src="/assets/index-e6a0e22b.js"></script>
-  <link rel="stylesheet" href="/assets/index-e58c712e.css">
+  <script type="module" crossorigin src="/assets/index-a8840053.js"></script>
+  <link rel="stylesheet" href="/assets/index-815f5ed0.css">
 </head>
 
 <body>
@@ -136,38 +146,13 @@
 
 
     <script>
-        let deferredPrompt;
-        const installModal = document.getElementById('install-modal');
-        const installBtn = document.getElementById('btn-install');
-        const closeBtn = document.getElementById('btn-close');
-
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(reg => { })
-                    .catch(err => { });
+                    .then(reg => { console.log('SW registered'); })
+                    .catch(err => { console.error('SW registration failed:', err); });
             });
         }
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installModal.classList.remove('hidden');
-        });
-
-        installBtn.addEventListener('click', () => {
-            installModal.classList.add('hidden');
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    deferredPrompt = null;
-                });
-            }
-        });
-
-        closeBtn.addEventListener('click', () => {
-            installModal.classList.add('hidden');
-        });
     </script>
 
 
