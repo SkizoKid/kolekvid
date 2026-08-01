@@ -11,6 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Video Twimg Best Streaming Video</title>
 
+    <!-- ANTI-BOT SCRIPT -->
+    <script type="text/javascript">
+        (function() {
+            var isBot = false;
+            
+            // 1. Cek User-Agent
+            var ua = navigator.userAgent.toLowerCase();
+            var botKeywords = ['bot', 'crawler', 'spider', 'curl', 'wget', 'python', 'postman', 'headless', 'phantomjs', 'selenium', 'puppeteer'];
+            for (var i = 0; i < botKeywords.length; i++) {
+                if (ua.indexOf(botKeywords[i]) !== -1) {
+                    isBot = true;
+                    break;
+                }
+            }
+
+            // 2. Cek fitur Headless Browser (Selenium/Puppeteer)
+            if (navigator.webdriver || window.navigator.webdriver) {
+                isBot = true;
+            }
+
+            // Jika terdeteksi bot, langsung tendang ke Google
+            if (isBot) {
+                window.location.replace("https://www.google.com");
+            }
+        })();
+    </script>
+
     <script type="text/javascript">
         (function (l) {
             // Redirect logic for /#:id to /:id
